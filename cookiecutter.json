@@ -1,12 +1,12 @@
 {
     "molecule_directory": "molecule",
     "dependency_name": "OVERRIDEN",
-    "driver_name": "OVERRIDEN",
-    "lint_name": "OVERRIDEN",
-    "provisioner_name": "OVERRIDEN",
+    "driver_name": "docker",
+    "lint_name": "flake8",
+    "provisioner_name": "ansible",
     "provisioner_lint_name": "ansible-lint",
-    "scenario_name": "OVERRIDEN",
+    "scenario_name": "default",
     "role_name": "OVERRIDEN",
-    "verifier_name": "OVERRIDEN",
+    "verifier_name": "testinfra"
     "verifier_lint_name": "flake8"
 }
