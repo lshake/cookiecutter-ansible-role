@@ -34,7 +34,7 @@ passed in as parameters) is always nice for users too:
 
     - hosts: servers
       roles:
-         - { role: {{ cookiecutter.role_name }}, x: 42 }
+         - { role: {{ cookiecutter.github_username }}.{{ cookiecutter.role }}, x: 42 }
 
 License
 -------

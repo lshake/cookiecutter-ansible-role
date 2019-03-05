@@ -6,8 +6,8 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: instance
-    image: "${MOLECULE_DISTRIBUTION:-registry.access.redhat.com/rhel7-init:latest}"
+  - name: molecule-{{ cookiecutter.role }}
+    image: "{{ cookiecutter.docker_registry }}/{{ cookiecutter.docker_image }}"
     command: ${MOLECULE_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro

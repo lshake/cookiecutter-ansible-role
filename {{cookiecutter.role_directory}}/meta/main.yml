@@ -1,12 +1,10 @@
 ---
 galaxy_info:
-  author: your name
+  author: {{ cookiecutter.full_name }}
   description: your description
-  company: your company (optional)
+  company: {{ cookiecutter.company }}
 
-  # If the issue tracker for your role is not on github, uncomment the
-  # next line and provide a value
-  # issue_tracker_url: http://example.com/issue/tracker
+  issue_tracker_url: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.rolename }}/issues
 
   # Some suggested licenses:
   # - BSD (default)
@@ -17,7 +15,7 @@ galaxy_info:
   # - CC-BY
   license: license (GPLv2, CC-BY, etc)
 
-  min_ansible_version: 1.2
+  min_ansible_version: 2.2
 
   # If this a Container Enabled role, provide the minimum Ansible Container version.
   # min_ansible_container_version:

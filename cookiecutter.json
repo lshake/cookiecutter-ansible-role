@@ -1,4 +1,28 @@
 {
-    "role_name": "ansible-role-mynewrole",
-    "distribution": ["RHEL7", "CentOS7"]
+    "_data": {
+        "RHEL7": {
+            "AMI": "ami123456789",
+            "docker_registry": "registry.access.redhat.com",
+            "docker_image": "rhel7-init:latest"
+         },
+        "CentOS7": {
+            "AMI": "ami987654321",
+            "docker_registry": "docker.io",
+            "docker_image": "lshake/centos7-systemd:latest"
+        }
+    },
+    "full_name": "My Full Name",
+    "email": "myemail@address.com",
+    "github_username": "MyGitHubUser",
+    "company": "My Corp",
+    "role": "my-new-role",
+    "rolename": "{{ cookiecutter.github_username }}.{{ cookiecutter.role }}",
+    "role_directory": "{{ cookiecutter.rolename.lower() }}",
+    "distribution": ["RHEL7", "CentOS7"],
+    "ami": "{{ cookiecutter._data[cookiecutter.distribution].AMI }}",
+    "docker_registry": "{{ cookiecutter._data[cookiecutter.distribution].docker_registry }}",
+    "docker_image": "{{ cookiecutter._data[cookiecutter.distribution].docker_image }}",
+    "_copy_without_render": [
+        "*.j2"
+    ]
 }
