@@ -9,15 +9,25 @@
             "AMI": "ami987654321",
             "docker_registry": "docker.io",
             "docker_image": "lshake/centos7-systemd:latest"
+        },
+        "GitHub": {
+            "git_remote": "https://github.com/"
+        },
+        "GitLab": {
+            "git_remote": "https://gitlab.lab.shakey.org/"
         }
     },
     "full_name": "My Full Name",
     "email": "myemail@address.com",
-    "github_username": "MyGitHubUser",
-    "company": "My Corp",
+    "git_service": ["GitLab", "GitHub"],
+    "git_remote": "{{ cookiecutter._data[cookiecutter.git_service].git_remote }}",
+    "git_username": "MyGitUser",
+    "git_token": "MyGitToken",
+    "git_project": "ansible",
     "role": "my-new-role",
-    "rolename": "{{ cookiecutter.github_username }}.{{ cookiecutter.role }}",
+    "rolename": "ansible-role-{{ cookiecutter.role }}",
     "role_directory": "{{ cookiecutter.rolename.lower() }}",
+    "company": "My Corp",
     "distribution": ["RHEL7", "CentOS7"],
     "ami": "{{ cookiecutter._data[cookiecutter.distribution].AMI }}",
     "docker_registry": "{{ cookiecutter._data[cookiecutter.distribution].docker_registry }}",
